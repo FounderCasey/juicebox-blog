@@ -12,20 +12,46 @@
       </header>
       <div class="info fade-in">
         <h2>Popular Posts</h2>
-        <p>
-          First and foremost, we’re people. Humans, just like you. After that,
-          we’re happily titled with roles like: engineer, designer, support,
-          marketer, sales. We’re also 100% remote and globally distributed. We
-          encourage creativety and freedom of thinking.
-        </p>
+        <div class="posts">
+          <PostCard
+            v-for="edge in $page.posts.edges"
+            :key="edge.node.id"
+            :post="edge.node"
+          />
+        </div>
       </div>
     </div>
     <Footer />
   </Layout>
 </template>
 
+<page-query>
+query {
+  posts: allPost(filter: { published: { eq: true }}) {
+    edges {
+      node {
+        id
+        title
+        date (format: "D. MMMM YYYY")
+        timeToRead
+        description
+        cover_image (width: 770, height: 380, blur: 10)
+        path
+        tags {
+          id
+          title
+          path
+        }
+      }
+    }
+  }
+}
+</page-query>
+
 <script>
 import Footer from "../components/Footer";
+import Author from "~/components/Author.vue";
+import PostCard from "~/components/PostCard.vue";
 export default {
   metaInfo: {
     title: "Hello, world!",
@@ -37,13 +63,15 @@ export default {
   },
   components: {
     Footer,
+    Author,
+    PostCard,
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .container {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -127,6 +155,7 @@ header {
   margin: auto;
   padding: 55px 0;
   text-align: center;
+  height: auto;
   h2 {
     font-size: 2rem;
     margin: 0 0 15px 0;
