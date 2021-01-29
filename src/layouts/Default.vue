@@ -1,6 +1,7 @@
 <template>
   <div class="layout">
     <Navbar />
+    <div style="margin-top: 70px;"></div>
     <slot />
   </div>
 </template>

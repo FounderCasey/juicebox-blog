@@ -1,8 +1,8 @@
 <template>
   <Layout>
     <div class="container">
-      <header>
-        <h1 class="slide-in-top">Juicebox</h1>
+      <header id="hero">
+        <h1 class="slide-in-top">Juicebox's Blog</h1>
         <p class="slide-in-bottom">
           We wanted to share what we're passionate about. Take a dive in and let
           us know what you're thinking!
@@ -78,7 +78,6 @@ export default {
   align-items: center;
   max-width: 1198px;
   margin: 0 auto;
-  padding-top: 70px;
 
   h1 {
     margin-bottom: 0;
@@ -114,7 +113,7 @@ export default {
   box-shadow: 0 0 0 2px #cacdd5;
 }
 
-header {
+#hero {
   position: relative;
   border-radius: 5px;
   width: 1198px;
@@ -174,22 +173,21 @@ header {
   }
 }
 @media only screen and (max-width: 1198px) {
-  #about {
-    header,
-    .info {
-      width: 90%;
-      margin: auto;
-    }
-    img {
-      width: 25%;
-    }
+  #hero,
+  .info {
+    width: 90%;
+    margin: auto;
+  }
+  img {
+    width: 25%;
   }
 }
+
 @media only screen and (max-width: 768px) {
-  header {
+  #hero {
     height: 350px;
   }
-  header,
+  #hero,
   .info {
     width: 90%;
     margin: auto;
@@ -208,7 +206,11 @@ header {
     }
   }
   img {
-    width: 25%;
+    width: 35%;
+    &:first-of-type {
+      transform: scaleY(-1);
+      top: -40px;
+    }
   }
 }
 .slide-in-top {

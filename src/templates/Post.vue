@@ -28,7 +28,7 @@
       <!-- Add comment widgets here -->
     </div>
 
-    <Author class="post-author" />
+    <Author class="post-author" :author="$page.post.author" />
   </Layout>
 </template>
 

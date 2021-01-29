@@ -62,6 +62,10 @@ export default {
     margin-top: 0;
   }
 
+  &__description {
+    font-size: 1rem;
+  }
+
   &:hover {
     transform: translateY(-5px);
     box-shadow: 1px 10px 30px 0 rgba(0, 0, 0, 0.1);
