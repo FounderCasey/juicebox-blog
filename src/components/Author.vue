@@ -9,12 +9,8 @@
       blur="5"
     />
 
-    <h1 v-if="showTitle" class="author__site-title">
-      {{ $static.metadata.siteName }}
-    </h1>
-
     <h1 class="author__site-title">
-      {{ author }}
+      Casey
     </h1>
 
     <p class="author__intro">
@@ -53,7 +49,6 @@ export default {
     border-radius: 100%;
     width: 90px;
     height: 90px;
-    margin-bottom: 1em;
   }
 
   &__intro {

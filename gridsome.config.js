@@ -6,7 +6,7 @@
 module.exports = {
   siteName: "Juicebox",
   siteDescription:
-    "A simple, hackable & minimalistic starter for Gridsome that uses Markdown for content.",
+    "Juicebox's, a start up encouraging employee celebration, blog!",
 
   templates: {
     Post: "/:title",

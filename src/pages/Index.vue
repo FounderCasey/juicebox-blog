@@ -12,6 +12,7 @@
       </header>
       <div class="info fade-in">
         <h2>Popular Posts</h2>
+        <br />
         <div class="posts">
           <PostCard
             v-for="edge in $page.posts.edges"
@@ -35,7 +36,7 @@ query {
         date (format: "D. MMMM YYYY")
         timeToRead
         description
-        cover_image (width: 770, height: 380, blur: 10)
+        cover_image (width: 1200, height: 250, blur: 10)
         path
         tags {
           id

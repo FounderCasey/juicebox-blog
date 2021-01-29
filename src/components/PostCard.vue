@@ -55,7 +55,7 @@ export default {
   }
 
   &__image {
-    min-width: 100%;
+    object-fit: cover;
   }
 
   &__title {
